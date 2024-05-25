@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Facebook Volume Control",
+  "version": "1.0",
+  "description": "Set volume for Facebook to 30% by default.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
